@@ -6,7 +6,7 @@ const Header = () => {
     <div className='hie fixed w-[100vw] z-30 px-3 py-11 sm:px-17 sm:py-17 flex items-center justify-end'>
       
   <a
-    href='/Hari_Bait_Resume.pdf'
+    href='/Hari Bait_Resume.pdf'
     target='_blank'
     rel='noopener noreferrer'
     download={true}

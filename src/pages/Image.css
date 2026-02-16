@@ -1,0 +1,9 @@
+.Image {
+    height: 10vw;
+}
+
+.YO {
+    display: flex;
+    
+    flex-wrap: wrap;
+}

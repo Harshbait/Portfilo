@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import TiltText from '../components/TiltText'
 import Page1Bottom from '../components/Page1Bottom'
+import Logo from '../components/Logo'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 
@@ -36,11 +37,7 @@ const Page1 = () => {
       >
       
       
-      <div className=" w-[100vw]">
-        <a href="https://portfilo-nu-eight.vercel.app/"><img className="sm:ml-[2rem] shadow-2xl shadow-neutral-500x m-2 sm:h-15 md:h-15 lg:h-20 xl:h-25  h-15 z-30 fixed" src="/logo.png"/></a>
-      </div>
-        
-        
+      <Logo />
         <TiltText ref={titleRef} />
         
         <Page1Bottom />

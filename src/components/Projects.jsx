@@ -1,28 +1,87 @@
 import React from 'react'
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 const Projects = () => {
   return (
-    <div className='rota flex flex-wrap gap-4 ml-[12vh]'>
-      <a href="https://wanderlust-og59.onrender.com/listings" target="_blank" rel="noopener noreferrer">
-        <img
-          src="wander.png"
-          className="h-[100px] sm:mt-[20vh] sm:ml-[10vh] sm:h-[30vh] ease-in-out transition-transform duration-700 hover:scale-105 "
-          alt="Chats Project"
-        />
-      </a>
+    <div className="Utility flex justify-center px-2">
 
-      <a href="https://chillis.vercel.app/" target="_blank" rel="noopener noreferrer">
-        <img
-          src="Chilis.png"
-          className="h-[100px] sm:h-[30vh]  transition-transform duration-700 ease-in-out hover:scale-105 "
-          alt="Chillis Project"
-        />
-      </a>
+      <div className="w-full max-w-[280px] sm:max-w-sm transition-transform duration-500 hover:scale-105">
+        <Card
+          sx={{
+            width: '100%',
+            backgroundColor: '#111827',
+            borderRadius: 3
+          }}
+        >
+          <CardMedia
+            component="img"
+            image="./wander.png"
+            alt="Wander App"
+            sx={{
+              height: { xs: 100, sm: 150 },
+              objectFit: 'cover'
+            }}
+          />
 
-      
+          <CardContent sx={{ p: { xs: 1.2, sm: 2 } }}>
+            <Typography
+              gutterBottom
+              sx={{
+                color: '#fff',
+                fontSize: { xs: '0.95rem', sm: '1.2rem' },
+                fontWeight: 600
+              }}
+            >
+              Wander App
+            </Typography>
+
+            <Typography
+              sx={{
+                color: '#9CA3AF',
+                fontSize: { xs: '0.75rem', sm: '0.9rem' },
+                lineHeight: 1.3,
+                display: '-webkit-box',
+                WebkitLineClamp: 3,   // limits height
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden'
+              }}
+            >
+              Full-stack travel website using EJS, Bootstrap, Node.js,
+              Express.js & MongoDB with MVC architecture, Mapbox maps,
+              and Cloudinary uploads.
+            </Typography>
+          </CardContent>
+
+          <CardActions sx={{ px: 1.5, pb: 1.5, gap: 1 }}>
+            <Button
+              size="small"
+              sx={{ color: '#38BDF8', fontSize: '0.75rem' }}
+              onClick={() =>
+                window.open("https://github.com/Harshbait/wanderLust")
+              }
+            >
+              GitHub
+            </Button>
+
+            <Button
+              size="small"
+              sx={{ color: '#38BDF8', fontSize: '0.75rem' }}
+              onClick={() =>
+                window.open("https://wanderlust-og59.onrender.com/listings")
+              }
+            >
+              Demo
+            </Button>
+          </CardActions>
+        </Card>
+      </div>
     </div>
-
-  )
+  );
 }
 
-export default Projects
+export default Projects;
