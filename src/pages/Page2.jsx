@@ -43,7 +43,7 @@ const Page2 = () => {
   });
 
   return (
-    <div className='page-2 bg-amber-50 sm:p-20 text-black text-center'>
+    <div className='page-2 bg-amber-50 sm:p-20 text-black text-center overflow-hidden'>
       <div id='secion2' className='relative'>
         {/* <a href="https://www.anzo.studio/" ><h3 className='text-gray-500 font-[Potfilo3]'>@Inspired by Anzo.studio</h3></a> */}
         <div className='rotateText'>

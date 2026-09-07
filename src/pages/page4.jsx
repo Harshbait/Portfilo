@@ -10,59 +10,63 @@ const Page4 = () => {
   const containerRef = useRef(null)
 
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger)
+    gsap.registerPlugin(ScrollTrigger);
+    const mm = gsap.matchMedia();
 
-    const isMobile = window.matchMedia('(max-width: 768px)').matches
-    const isLaptop = window.matchMedia(
-      '(min-width: 769px) and (max-width: 1800px)'
-    ).matches
+    mm.add({
+      isMobile: '(max-width: 768px)',
+      isLaptop: '(min-width: 769px) and (max-width: 1800px)',
+      isDesktop: '(min-width: 1801px)'
+    }, (context) => {
+      const { isMobile, isLaptop } = context.conditions;
 
-    if (isMobile) {
-      gsap.from('.rotate', {
-        transform: 'rotateX(-90deg)',
-        duration: 3,
-        opacity: 0,
-        ease: 'linear',
-        stagger: 1,
-        scrollTrigger: {
-          trigger: '.rotate',
-          start: 'top 120%',
-          end: 'top 20%',
-          scrub: 2,
-        },
-      })
-    }
-    else if (isLaptop) {
-      gsap.from('.rotate', {
-        transform: 'rotateX(-90deg)',
-        duration: 2,
-        opacity: 0,
-        ease: 'linear',
-        stagger: 1,
-        scrollTrigger: {
-          trigger: '.rotate',
-          start: 'top 170%',
-          end: 'top -150%',
-          scrub: 2,
-        },
-      })
-    }
-    else {
-      gsap.from('.rotate', {
-        transform: 'rotateX(-90deg)',
-        duration: 2,
-        opacity: 0,
-        ease: 'linear',
-        stagger: 1,
-        scrollTrigger: {
-          trigger: '.rotate',
-          start: 'top 260%',
-          end: 'top -150%',
-          scrub: 2,
-        },
-      })
-    }
-  }, { scope: containerRef })
+      if (isMobile) {
+        gsap.from('.rotate', {
+          transform: 'rotateX(-90deg)',
+          duration: 2,
+          opacity: 0,
+          ease: 'power1.out',
+          stagger: 0.3,
+          scrollTrigger: {
+            trigger: '.rotate',
+            start: 'top 100%',
+            end: 'top 20%',
+            scrub: 1,
+          },
+        });
+      } else if (isLaptop) {
+        gsap.from('.rotate', {
+          transform: 'rotateX(-90deg)',
+          duration: 2,
+          opacity: 0,
+          ease: 'linear',
+          stagger: 1,
+          scrollTrigger: {
+            trigger: '.rotate',
+            start: 'top 170%',
+            end: 'top -150%',
+            scrub: 2,
+          },
+        });
+      } else {
+        gsap.from('.rotate', {
+          transform: 'rotateX(-90deg)',
+          duration: 2,
+          opacity: 0,
+          ease: 'linear',
+          stagger: 1,
+          scrollTrigger: {
+            trigger: '.rotate',
+            start: 'top 260%',
+            end: 'top -150%',
+            scrub: 2,
+          },
+        });
+      }
+    });
+
+    return () => mm.revert();
+  }, { scope: containerRef });
 
   return (
     <div

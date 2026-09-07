@@ -98,6 +98,24 @@ const skills = () => {
           <p class="mt-2 text-sm text-gray-700">Java</p>
         </div>
 
+        <div className='rotat text-center'>
+          <img
+            src="/gsap.svg"
+            className="rotat h-13 sm:h-20 sm:w-20 mx-auto object-contain"
+            alt="GSAP"
+          />
+          <p className="mt-2 text-sm text-gray-700">GSAP</p>
+        </div>
+
+        <div className='rotat text-center'>
+          <img
+            src="/locomotive.svg"
+            className="rotat h-13 sm:h-20 sm:w-20 mx-auto object-contain"
+            alt="Locomotive"
+          />
+          <p className="mt-2 text-sm text-gray-700">Locomotive</p>
+        </div>
+
         <div class="text-center" className='rotat text-center'>
           <img
             src="https://img.icons8.com/?size=100&id=40670&format=png&color=000000"

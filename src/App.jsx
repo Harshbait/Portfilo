@@ -5,7 +5,6 @@ import Git from './components/Git'
 
 import Header from './components/Header';
 import Page1 from './pages/Page1';
-import Page2 from './pages/Page2';
 import Page3 from './pages/Page3';
 import Page4 from './pages/page4';
 import Page5 from './pages/page5';
@@ -15,16 +14,16 @@ const App = () => {
   const scrollRef = useRef(null);
 
   useEffect(() => {
+    const isTouch = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
     const scroll = new LocomotiveScroll({
-  el: scrollRef.current,
-  smooth: true,
-  smoothMobile: true,      // ✅ smoother mobile scroll         // ✅ speed up (default is 1)
-  lerp: 0.1,               // ✅ smoothness (lower = smoother)
-});
-
+      el: scrollRef.current,
+      smooth: true,
+      smoothMobile: false, // Use native touch momentum on mobile to eliminate input lag and stuttering
+      lerp: 0.1,           // Desktop smoothness
+    });
 
     return () => {
-      scroll.destroy(); // cleanup
+      scroll.destroy();
     };
   }, []);
 
@@ -33,7 +32,6 @@ const App = () => {
       <Header />
       <Git />
       <Page1 />
-      <Page2 />
       <Page3 />
       <Page4 />
       <Page5 />
